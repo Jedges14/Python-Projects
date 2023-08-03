@@ -1,0 +1,30 @@
+function showFacts() {
+    const diagnosticFacts = [
+        "Did you know that fever is the body's natural response to fight infections?",
+        "Chills often accompany high fever as the body tries to increase its temperature.",
+        "Malaria is a common cause of fever in tropical regions.",
+        // Add more diagnostic facts here...
+    ];
+
+    const medicalHistoryFacts = [
+        "Typhoid fever is caused by the bacteria Salmonella typhi.",
+        "Typhoid fever symptoms may include headache, abdominal pain, and constipation.",
+        "Malaria is transmitted through the bite of infected mosquitoes.",
+        // Add more medical history facts here...
+    ];
+
+    const textbot = document.querySelector(".textbot");
+    const diagnosticFactsDiv = document.querySelector(".diagnostic-facts");
+    const medicalHistoryFactsDiv = document.querySelector(".medical-history-facts");
+
+    const randomDiagFact = diagnosticFacts[Math.floor(Math.random() * diagnosticFacts.length)];
+    const randomMedFact = medicalHistoryFacts[Math.floor(Math.random() * medicalHistoryFacts.length)];
+
+    textbot.innerHTML = `<span>Click me to find more</span>`;
+    diagnosticFactsDiv.innerHTML = randomDiagFact;
+    medicalHistoryFactsDiv.innerHTML = randomMedFact;
+
+    textbot.classList.toggle("visible");
+    diagnosticFactsDiv.classList.toggle("visible");
+    medicalHistoryFactsDiv.classList.toggle("visible");
+}
